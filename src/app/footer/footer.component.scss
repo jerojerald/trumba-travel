@@ -1,0 +1,36 @@
+.footer.bg-primary {
+    padding: 30px;
+}
+
+.footerTitle {
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.marginAdd div {
+    padding: 7px 0px;
+    margin: 7px 0px;
+}
+
+.linksInfo {
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.linksInfo a {
+    text-decoration: underline;
+    color: #fff;
+}
+
+.para div {
+    line-height: 20px;
+}
+
+.bgFooterLogo {
+    background: #fff;
+    border-radius: 10px;
+    padding-top: 2px;
+    padding-bottom: 0px;
+}

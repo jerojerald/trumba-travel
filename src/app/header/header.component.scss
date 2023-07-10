@@ -1,0 +1,33 @@
+.mat-toolbar-row, .mat-toolbar-single-row {
+    height: 100%;
+    justify-content: space-between;
+}
+
+.activeRoute {
+    color: #287DFA;
+    text-decoration: none !important;
+    font-weight: 600;
+}
+
+.svgMenu,  .svgMenu span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    color: #287DFA;
+    text-decoration: none !important;
+    font-weight: 600;
+}
+
+.menuList {
+    align-items: center;
+    align-content: center;
+    mat-icon {
+        font-size: 20px;
+    }
+
+    .homeIcon mat-icon {
+        position: relative;
+        top: 2px;
+    }
+}

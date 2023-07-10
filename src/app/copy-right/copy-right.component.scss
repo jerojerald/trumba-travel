@@ -1,0 +1,17 @@
+
+mat-toolbar-row {
+    height: 100%;
+}
+
+.copyRight {
+    align-items: center;
+    place-content: center space-between;
+    span {
+        color: (#14131E);
+        font-size: 14px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}

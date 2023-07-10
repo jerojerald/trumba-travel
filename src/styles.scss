@@ -1,0 +1,682 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$travel-primary: mat.define-palette(mat.$indigo-palette);
+$travel-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$travel-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$travel-theme: mat.define-light-theme((color: (primary: $travel-primary,
+                accent: $travel-accent,
+                warn: $travel-warn,
+            )));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($travel-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+// Inter font-family import from google-fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+h1 {
+    color: var(--foundation-text-01-text-01900, #14131E) !important;
+    font-size: 44px !important;
+    font-family: Inter !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: normal !important;
+    letter-spacing: 0.54px !important;
+}
+
+h2 {
+    color: var(--foundation-text-01-text-01900, #14131E) !important;
+    font-size: 34px !important;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600 !important;
+    line-height: normal;
+}
+
+h3 {
+    color: var(--foundation-text-01-text-01900, #14131E) !important;
+    font-size: 23px !important;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600 !important;
+    line-height: normal;
+}
+
+p,
+div,
+span,
+a {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+input,
+select {
+    color: var(--foundation-text-01-text-01900, #14131E);
+    font-size: 16px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.title-info {
+    color: #287DFA;
+    font-size: 24px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+html,
+body {
+    height: 100%;
+    background: #fff !important;
+}
+
+.mat-drawer-container {
+    background: #fff !important;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter';
+    background-color: #fff;
+}
+
+.plainRow {
+    width: 100%;
+    background-color: #113569;
+    height: 30px;
+}
+
+.primary {
+    color: #287DFA;
+}
+
+.btn-primary {
+  background: #287DFA !important;
+  color: white !important;
+}
+
+.bg-primary {
+    background: #287DFA;
+    color: white;
+}
+
+// .mat-primary {
+//     background: #287DFA !important;
+//     color: white !important;
+// }
+
+.light-green-bg {
+    background: #BCD7FD !important;
+    height: 60px;
+    width: 100%;
+    color: #14131E;
+    font-size: 14px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+// .TravelBaseControl,
+// .header {
+//     height: 100%;
+// }
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 750px !important;
+    }
+
+    .container2 {
+        max-width: 700px !important;
+    }
+
+    .container3 {
+        max-width: 730px !important;
+    }
+
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 970px !important;
+    }
+    .container2 {
+        max-width: 870px !important;
+    }
+
+    .container3 {
+        max-width: 900px !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px !important;
+    }
+    .container2 {
+        max-width: 1000px !important;
+    }
+
+    .container3 {
+        max-width: 1100px !important;
+    }
+}
+
+.container {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    width: 100% !important;
+    white-space: initial !important;
+}
+
+.container2 {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    width: 100% !important;
+    white-space: initial !important;
+}
+
+.container3 {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    width: 100% !important;
+    white-space: initial !important;
+}
+
+.atol {
+    background-image: url('./assets/atol-grey-1.png');
+}
+
+.iata {
+    background-image: url('./assets/IATA-2.png');
+}
+
+.abta {
+    background-image: url('./assets/abta-3.png');
+}
+
+.icon1 {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.icon2 {
+    width: 103px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.greenFon {
+    color: #00cb79;
+}
+
+.greenBg {
+    background: #00cb79;
+}
+
+.black {
+    color: #000;
+}
+
+.menuList {
+    a, span {
+    color: #14131E;
+    font-size: 14px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    }
+}
+
+.bg-holidays {
+    background: url('./assets/header-bg.png');
+    background-size: cover;
+    // height: calc(40vh + 275px);
+    height: 400px;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+app-filter-form {
+    position: relative;
+    // top: calc(25vh + 0px);
+    top: 20%;
+}
+
+.header-info {
+    margin: 10px 0px;
+}
+
+.img-res {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.bestThumb {
+    width: 300px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.marginSection {
+    margin: 50px 0px;
+}
+
+.round-pg {
+    width: 370px;
+    height: 370px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #0073FB 0%, #B9DFFF 67.30%);
+}
+
+
+.topOffer {
+    width: 280px;
+    height: 345px;
+    flex-shrink: 0;
+    display: flex;
+    align-content: flex-end;
+    align-items: flex-end;
+}
+
+.offer1 {
+    background: url('./assets/topOffer1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.offer2 {
+    background: url('./assets/topOffer2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.offer3 {
+    background: url('./assets/topOffer3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.offer4 {
+    background: url('./assets/topOffer4.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.whiteHeader {
+    color: #fff;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.font30 {
+    font-size: 30px;
+}
+
+.font25 {
+    font-size: 25px;
+}
+
+.font18 {
+    font-size: 18px;
+}
+
+.font13 {
+    font-size: 13px;
+}
+
+.fontWe600 {
+    font-weight: 600;
+}
+
+.fontWe500 {
+    font-weight: 500;
+}
+
+.font12 {
+    font-size: 12px;
+}
+
+.font11 {
+    font-size: 11px;
+}
+
+.fontWe300 {
+    font-weight: 300;
+}
+
+.margin10 {
+    margin: 10px 0px;
+}
+
+.margin30 {
+    margin: 30px 0px;
+}
+
+.margin20 {
+    margin: 20px 0px;
+}
+
+.paddingbottom {
+    padding-bottom: 30px;
+    padding-left: 10px;
+}
+
+.secondHeader {
+    margin-bottom: 20px;
+}
+
+.left50 {
+    width: 100%;
+    height: 500px;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+}
+
+.lobg {
+    background: url('./assets/london.png');
+}
+
+.contentCenter {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.fontSlim {
+    font-size: 72px;
+    font-weight: 100;
+}
+
+.imgages-container {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: space-between;
+    height: 500px;
+    width: 100%;
+    padding: 0px 20px;
+    counter-reset: items;
+}
+
+.item {
+    width: 32%;
+    position: relative;
+    margin-bottom: 2%;
+    border-radius: 3px;
+    color: #fff;
+    padding: 15px;
+    box-sizing: border-box;
+    background-size: cover !important;
+    background-position: center center !important
+}
+
+ /* Just to print out numbers */
+// div.item::before {
+//   counter-increment: items;
+//   content: counter(items);
+// }
+
+/* Re-order items into 3 rows */
+// .item:nth-of-type(4n+1) { order: 1; }
+// .item:nth-of-type(4n+2) { order: 2; }
+// .item:nth-of-type(4n+3) { order: 3; }
+// .item:nth-of-type(4n)   { order: 4; }
+
+.india {
+    background: url('./assets/destination2.png')
+}
+
+.usa {
+    background: url('./assets/usa.png')
+}
+
+.dubai {
+    background: url('./assets/dubai.png')
+}
+
+.malaysia {
+    background: url('./assets/malaysia.png')
+}
+
+.thailand {
+    background: url('./assets/Thailand.png');
+}
+
+.darglin {
+    background: url('./assets/Darjeeling.png');
+}
+
+.australia {
+    background: url('./assets/Australia.png');
+}
+
+.srilanka {
+    background: url('./assets/srilanka.png');
+}
+
+.fonIn {
+    font-weight: 600;
+}
+
+.fonUs {
+    font-weight: 600;
+}
+
+.fonDu {
+    font-weight: 700;
+}
+
+.fonMa {
+    font-weight: 600;
+}
+
+.fonTh {
+    font-weight: 400;
+    font-style: italic;
+}
+
+.fonDa {
+    font-weight: 400;
+    font-style: italic;
+}
+
+.fonAu {
+    font-weight: 600;
+}
+
+.fonSr {
+    font-weight: 600;
+}
+
+.item .whiteHeader {
+    font-size: 30px;
+}
+
+.bgLight {
+    background: linear-gradient(180deg, #88CBFF 0%, #ACE2FF 100%) !important;
+}
+
+.width50 {
+    width: 50%;
+}
+
+.width100 {
+    width: 100%;
+}
+
+.exInfo .primary {
+    font-size: 30px;
+}
+
+.exInfo {
+    width: 100px !important;
+}
+
+.radinginfo mat-icon {
+    color: #ffb400 !important;
+}
+
+.bgNewLetter {
+    position: relative;
+}
+
+.bgNewLetter {
+    border-radius: 16px;
+    background: linear-gradient(180deg, #287DFA 0%, rgba(188, 215, 253, 0.55) 100%);
+    align-items: center;
+    justify-content: end;
+    align-content: center;
+    padding: 50px 30px;
+}
+
+.bgNewLetterParen {
+    position: relative;
+    .newLetterImg {
+        position: absolute;
+        left: 30px;
+        max-width: 500px;
+        bottom: 0px;
+    }
+}
+
+
+button.btnArrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    margin-left: 15px;
+    background: #c2c7d0;
+    color: #fff;
+    :hover {
+        background: #287DFA;
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    mat-icon {
+        font-size: 40px !important;
+        height: 40px !important;
+        width: 40px !important;
+    }
+}
+
+.padding0 {
+    padding: 0px !important;
+}
+
+.font16 {
+    font-size: 16px;
+}
+
+.boxSlideCon div {
+    margin-bottom: 5px;
+}
+
+.radingBg {
+    width: 55px;
+    height: 30px;
+    display: flex;
+    border-radius: 16px 0px 16px 16px;
+    background: var(--foundation-primary-02-primary-02500, #00CB79);
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.sliderExplore {
+    background: url('./assets/explore.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 290px;
+    height: 420px;
+    display: flex;
+    align-items: end;
+    text-align: center;
+    margin-right: 15px;
+}
+
+.exploreBox {
+    padding-bottom: 30px;
+    .btnControl {
+        margin-top: 20px;
+        .btn-primary {
+            border-radius: 10px;
+        }
+    }
+}
+
+.margin15 {
+    margin: 15px 0px;
+}
+
+.logo img {
+    max-width: 90%;
+}
+
+.posRelative {
+    position: relative;
+}
+
+.margin0Right {
+    margin: 0px !important;
+    margin-left: 5% !important;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.textRight {
+    text-align: right;
+}

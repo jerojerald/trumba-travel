@@ -1,0 +1,152 @@
+<div class="container">
+  <div class="filterForm">
+    <form fxLayout="column" [formGroup]="filterForm" fxFlex="100">
+      <div fxLayout="row" fxLayoutGap="10px">
+        <mat-form-field fxFlex="15" appearance="outline">
+          <mat-select formControlName="roundTrip">
+            <mat-option *ngFor="let list of filterFormArr?.trip" [value]="list">{{list}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="15" appearance="outline">
+          <mat-select formControlName="permiumTrip">
+            <mat-option *ngFor="let list of filterFormArr?.class" [value]="list">{{list}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayoutGap="10px" class="posRelative" fxLayoutAlign="center center">
+        <mat-form-field fxFlex="20" appearance="outline">
+          <span fxLayout="flex" flexLayoutGap="10px" fxLayoutAlign="center center">
+            <mat-icon>flight_takeoff</mat-icon>
+            <span class="formLabel rightalign">flying from</span>
+            <input matInput [matAutocomplete]="auto" placeholder="flying from" formControlName="flyingFrom">
+          </span>
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
+              <span>{{state.name}}</span>
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+        <mat-form-field fxFlex="20" appearance="outline">
+          <span fxLayout="flex" flexLayoutGap="10px" fxLayoutAlign="center center">
+            <mat-icon>location_on</mat-icon>
+            <span class="formLabel rightalign">Flying to</span>
+            <input matInput [matAutocomplete]="auto2" placeholder="Flying to" formControlName="flyingTo">
+          </span>
+          <mat-autocomplete #auto2="matAutocomplete">
+            <mat-option *ngFor="let state of filteredToStates | async" [value]="state.name">
+              <span>{{state.name}}</span>
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+        <mat-form-field fxFlex="15" appearance="outline">
+          <div fxLayout="row" flexLayoutGap="10px" fxLayoutAlign="center center">
+            <span>
+              <mat-icon>date_range</mat-icon>
+            </span>
+            <span>
+              <span class="formLabel">Departure Date</span>
+              <input matInput (click)="startPicker.open()" (keyup.enter)="startPicker.open()" [min]="startMinDate"
+                [max]="startMaxDate" (dateChange)="changeStartDate('change', $event)" [matDatepicker]="startPicker"
+                formControlName="fromDate" readonly>
+              <mat-datepicker #startPicker></mat-datepicker>
+            </span>
+            <!-- <span class="divider"></span>
+              <span>
+                <span class="formLabel">To Date</span>
+                  <input matInput (click)="endPicker.open()" [min]="endMinDate" [max]="endMaxDate"
+                  (dateChange)="changeEndDate('change', $event)" [matDatepicker]="endPicker" placeholder="To Date"
+                  formControlName="returnDate" readonly>
+                  <mat-datepicker #endPicker></mat-datepicker>
+            </span> -->
+          </div>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="13" appearance="outline">
+          <span fxLayout="flex" flexLayoutGap="10px" fxLayoutAlign="center center">
+            <mat-icon>nights_stay</mat-icon>
+            <span class="formLabel rightalign">How long</span>
+            <mat-select formControlName="howlong" aria-placeholder="Passenger">
+              <mat-option [value]="list" *ngFor="let list of filterFormArr?.howlong">{{list}} Night</mat-option>
+            </mat-select>
+          </span>
+        </mat-form-field>
+
+        <div fxFlex="13" appearance="outline">
+          <span fxLayout="flex" fxFlex="100" (click)="openRooms()" class="posRelative customIn"
+            fxLayoutAlign="space-between center" flexLayoutGap="15px">
+            <div fxFlex="25">
+              <mat-icon>meeting_room</mat-icon>
+            </div>
+            <!-- <mat-select formControlName="rooms" aria-placeholder="Rooms">
+              <mat-option value="1">12 Guests</mat-option>
+              <mat-option value="2">5 Guests</mat-option>
+              <mat-option value="3">3 Guests</mat-option>
+            </mat-select> -->
+            <div class="roowCount formBorder" fxFlex="75">
+              <div class="formLabel rightalign">Rooms</div>
+              <div class="fontWe600">12 Guests</div>
+              <div class="controlPosArr mat-select-arrow"></div>
+            </div>
+          </span>
+        </div>
+        <div fxFlex="13" class="margin0Right" fxLayoutAlign="end">
+          <button mat-raised-button class="btnSearch btn-primary">Search</button>
+        </div>
+        <!-- Room dev start -->
+        <div class="showRoomForm" *ngIf="toggleRooms">
+          <div fxLayout="row" fxLayoutGap="10px">
+            <div fxLayout="column" fxLayoutGap="10px">
+              <div class="font16">For the best rates, please choose the appropriate room count.</div>
+              <div class="margin10" fxLayout="row" fxFlex="100" fxLayoutAlign="space-between center">
+                <div class="fontWe600 font16" fxLayout="row" fxLayoutAlign="start center">
+                  <mat-icon>meeting_room</mat-icon>
+                  <span class="marginlf10">Rooms</span>
+                </div>
+                <div class="fontWe600 font16 roomInDe primary" fxLayout="row" fxLayoutAlgin="end center">
+                  <div class="decrees pointer" (click)="decrement()">
+                    <mat-icon>remove_circle_outline</mat-icon>
+                  </div>
+                  <div class="countRoom black">{{count}}</div>
+                  <div class="increes pointer" (click)="increment()">
+                    <mat-icon>add_circle_outline</mat-icon>
+                  </div>
+                </div>
+              </div>
+              <div *ngFor="let list of ingreementArr; let i = index" fxLayout="row" fxFlex="100">
+                <div fxLayout="column" fxFlex="100">
+                  <div class="primary fontWe500 font16">
+                    <div class="chileRow" fxLayoutAlign="start center" fxLayout="row" flexLayoutGap="10px">
+                      <div class="marginRi10 font16" fxFlex="20">Room {{i}}</div>
+                      <div class="fontWe600 roomInDe primary" fxFlex="70" fxLayout="row" fxLayoutAlgin="end center">
+                        <div class="decrees pointer" (click)="decreaseCount(list.id)">
+                          <mat-icon>remove_circle_outline</mat-icon>
+                        </div>
+                        <div class="countRoom black">{{list.count}}</div>
+                        <div class="increes pointer" (click)="increaseCount(list.id)">
+                          <mat-icon>add_circle_outline</mat-icon>
+                        </div>
+                      </div>
+                    </div>
+                    <!--Age Form start-->
+                    <div class="chileRow" fxLayoutAlign="start center" fxLayout="row" flexLayoutGap="10px">
+                      <div *ngFor="let childbo of list?.ageArr" fxLayout="column" fxFlex="30" flexLayoutGap="10px">
+                        <div class="ageBox whiteHeader" fxLayout="row">
+                          <div class="bg-primary fontWe300">Age</div>
+                          <input class="fontWe300" type="text" value="18+">
+                        </div>
+                      </div>
+                    </div>
+                    <!--Age Form end-->
+                  </div>
+                </div>
+              </div>
+              <div class="primary font18 fontWe500 textRight pointer" (click)="closeShowform()">Done</div>
+            </div>
+          </div>
+        </div>
+        <!-- Room dev start -->
+      </div>
+    </form>
+  </div>
+</div>

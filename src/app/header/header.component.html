@@ -1,0 +1,71 @@
+<div class="plainRow"></div>
+<div class="header">
+    <mat-toolbar class="light-green-bg">
+        <mat-toolbar-row class="container">
+            <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+                <mat-icon>menu</mat-icon>
+            </button>
+            <div fxLayout="row" fxLayoutAlign="space-between center" fxFlex="100">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="logo">
+                </div>
+                <div fxShow="true" fxLayout="row" fxHide.lt-md class="menuList">
+                    <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+                    
+                    <a routerLink="#" mat-button class="homeIcon">
+                        <mat-icon>home</mat-icon>
+                        <span>Home</span>
+                    </a>
+                    <a routerLink="#"class="primary activeRoute">
+                        <span class="svgMenu">
+                        <span><img src="assets/holiday.svg" alt="holiday"></span>
+                        <span>Holiday</span>
+                        </span>
+                    </a>
+                    <a routerLink="#" mat-button>
+                        <mat-icon>flight</mat-icon>
+                        Flights
+                    </a>
+                    <a routerLink="#" mat-button>
+                        <mat-icon>hotel</mat-icon>
+                        Hotels
+                    </a>
+                    <a routerLink="#" mat-button>
+                        <mat-icon>local_shipping</mat-icon>
+                        Transfers
+                    </a>
+                    <a routerLink="#" mat-button>
+                        <mat-icon>hiking</mat-icon>
+                        Activities
+                    </a>
+                </div>
+                <div class="rightIcons" fxLayoutGap="20px" fxHide.lt-md>
+                    <!-- <div class="icon1 atol"></div>
+                    <div class="icon1 iata"></div>
+                    <div class="icon2 abta"></div> -->
+                    <img src="assets/atol-grey-1.png" alt="icon1">
+                    <img src="assets/IATA-2.png" alt="icon2">
+                    <img src="assets/abta-3.png" alt="icon3">
+                </div>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <mat-sidenav-container>
+        <mat-sidenav #sidenav>
+            <mat-nav-list>
+                <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+                <a href="#" mat-list-item>Menu Item 1</a>
+                <a href="#" mat-list-item>Menu Item 2</a>
+                <a href="#" mat-list-item>Menu Item 3</a>
+                <a href="#" mat-list-item>Menu Item 4</a>
+                <a href="#" mat-list-item>Menu Item 5</a>
+                <a href="#" mat-list-item>Menu Item 6</a>
+            </mat-nav-list>
+        </mat-sidenav>
+        <!-- <mat-sidenav-content fxFlexFill>
+            <app-footer></app-footer>
+            <app-copy-right></app-copy-right>
+        </mat-sidenav-content> -->
+    </mat-sidenav-container>
+</div>

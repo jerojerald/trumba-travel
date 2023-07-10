@@ -1,0 +1,130 @@
+::ng-deep .tab-control .mat-tab-labels {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    align-items: baseline;
+    align-content: center;
+    justify-content: start;
+}
+
+.rowBtn {
+    text-align: left;
+}
+
+.tabconTrolRow {
+    margin: 30px 0px;
+}
+
+.boldTabtitle {
+    color: #14131E;
+    font-weight: 700;
+}
+
+.rightTitle .boldTabtitle {
+    margin-bottom: 5px;
+}
+
+.btnTabControl {
+    border-bottom:  1px solid  rgba(33,33,33,0.1);
+    border-radius: 0px;
+    padding: 10px;
+}
+
+.btnTabControl.active {
+    background: rgba(188, 215, 253, 0.4);
+    border-bottom: none;
+}
+
+
+.rightTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.newLetterForm ::ng-deep .mat-form-field-flex.ng-tns-c120-1 {
+    background: #fff !important;
+    width: 300px !important;
+}
+
+.newsForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: start;
+    align-content: center;
+
+}
+
+.newLetterForm ::ng-deep .mat-form-field-infix.ng-tns-c120-1 {
+    padding-bottom: 13px;
+    margin-left: 14px;
+}
+ 
+.subscribeBtn {
+    padding: 5.5px;
+    border-radius: 0px;
+    box-shadow: 0px 0px;
+    width: 100px;
+}
+
+.height400 {
+    height: 400px;
+}
+
+.boxSlideCon {
+    display: block !important;
+    padding: 15px;
+}
+
+.sliderDestini {
+    margin-right: 10px;
+    margin-left: 5px;
+    border-radius: 20px 20px 10px 10px;
+    background: #fff;
+    box-shadow: 1px 3px 3px 0px rgba(97, 97, 97, 0.24);
+}
+
+::ng-deep .slick-list.draggable {
+    height: 430px;
+}
+
+.rade {
+    text-align: right;
+}
+
+::ng-deep .tabPopularHot {
+    mat-tab-header.mat-tab-header {
+        border-bottom: none !important;
+    }
+    .mat-ripple.mat-tab-label {
+        text-align: left !important;
+        justify-content: flex-start;
+        padding: 0;
+        min-width: 130px;
+    }
+    mat-ink-bar.mat-ink-bar {
+        display: none;
+    }
+    .mat-tab-label {
+        opacity: 1;
+    }
+    .mat-tab-label .mat-tab-label-content {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        white-space: nowrap;
+        color: #000 !important;
+        font-weight: 500;
+        opacity: 1 !important;
+    }
+}
+
+.relativeCus {
+    max-width: 400px !important;
+    height: auto;
+    display: block;
+    position: relative;
+    bottom: 30px;
+}

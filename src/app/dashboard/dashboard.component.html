@@ -1,0 +1,303 @@
+<div class="bg-holidays">
+    <app-filter-form></app-filter-form>
+</div>
+
+<!-- Best Offer Section Start -->
+<div class="bestService container2 marginSection">
+    <br /><br />
+    <div fxLayout="row" fxLayoutAlign="space-evenly">
+        <div class="left-content">
+            <div class="header-info primary">Trumba Travel</div>
+            <h1>We Offer Best Services</h1>
+            <div class="tabconTrolRow" fxLayout="column" fxLayoutGap="10px">
+                <button mat-button fxLayout="row" fxFlex="100" class="btnTabControl active">
+                    <div fxLayout="row" fxLayoutAlign="center" class="rowBtn">
+                        <div fxFlex="25">
+                            <img src="assets/travel-tab1.svg" alt="" srcset="">
+                        </div>
+                        <div fxFlex="75" class="rightTitle">
+                            <div class="boldTabtitle">Best Travel Pack</div>
+                            <div class="primary">Great opportunities to travel to enjoy yourself</div>
+                        </div>
+                    </div>
+                </button>
+                <button mat-button fxLayout="row" fxFlex="100" class="btnTabControl">
+                    <div fxLayout="row" fxLayoutAlign="center" class="rowBtn">
+                        <div fxFlex="25">
+                            <img src="assets/travel-tab2.svg" alt="" srcset="">
+                        </div>
+                        <div fxFlex="75" class="rightTitle">
+                            <div class="boldTabtitle">Airline Best Flights</div>
+                            <div>Great opportunities to travel to enjoy yourself</div>
+                        </div>
+                    </div>
+                </button>
+                <button mat-button fxLayout="row" fxFlex="100" class="btnTabControl">
+                    <div fxLayout="row" fxLayoutAlign="center" class="rowBtn">
+                        <div fxFlex="25">
+                            <img src="assets/travel-tab3.svg" alt="" srcset="">
+                        </div>
+                        <div fxFlex="75" class="rightTitle">
+                            <div class="boldTabtitle">East Booking</div>
+                            <div>Great opportunities to travel to enjoy yourself</div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div class="right-content">
+            <div class="bestThumb">
+                <div class="round-pg">
+                    <img class="img-res relativeCus" src="assets/thumb-up.png" alt="Best Travel Img">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Best Offer Section end -->
+
+<!-- Top Offer Secion Start -->
+<div class="topOffers container marginSection" fxLayout="column">
+    <div class="secondHeader">
+        <h3>Top Offers</h3>
+    </div>
+    <div class="imgRow" fxLayout="row" fxFlex="100" fxLayoutAlign="space-between center">
+        <div class="topOffer offer1">
+            <div class="whiteHeader paddingbottom">
+                <div class="bold font30">Great</div>
+                <div class="font30">Holiday Deals</div>
+            </div>
+        </div>
+        <div class="topOffer offer2">
+            <div class="whiteHeader paddingbottom">
+                <div class="font30">Tickets</div>
+                <div> Tons of attractions at fun-tastic prices</div>
+                <br>
+            </div>
+        </div>
+        <div class="topOffer offer3">
+            <div class="whiteHeader paddingbottom">
+                <div class="font30">Your</div>
+                <div>First trip together</div>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="topOffer offer4">
+        </div>
+    </div>
+</div>
+<!-- Top Offer Secion end -->
+
+
+<!-- Top Destinations Secion Start -->
+<div class="topOffers container marginSection" fxLayout="column">
+    <div class="secondHeader">
+        <h3>Top Destinations</h3>
+    </div>
+    <div class="imgRow" fxLayout="row" fxFlex="100" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="50">
+            <div class="left50 lobg contentCenter">
+                <div class="whiteHeader fontSlim">LONDON</div>
+            </div>
+        </div>
+        <div fxLayout="column" fxFlex="50">
+            <div class="imgages-container">
+                <div class="item india contentCenter" style="height: 146px">
+                    <div class="whiteHeader fonIn">India</div>
+                </div>
+                <div class="item usa contentCenter" style="height: 146px">
+                    <div class="whiteHeader fontUs">USA</div>
+                </div>
+                <div class="item dubai contentCenter" style="height: 170px">
+                    <div class="whiteHeader fontDu">DUBAI</div>
+                </div>
+                <div class="item malaysia contentCenter" style="height: 170px">
+                    <div class="whiteHeader fontMa">Malaysia</div>
+                </div>
+                <div class="item thailand contentCenter" style="height: 146px">
+                    <div class="whiteHeader fontTh">Thailand</div>
+                </div>
+                <div class="item darglin contentCenter" style="height: 146px">
+                    <div class="whiteHeader fontDa">Darjeeling</div>
+                </div>
+                <div class="item australia contentCenter" style="height: 235px">
+                    <div class="whiteHeader fontAu">Australia</div>
+                </div>
+                <div class="item srilanka contentCenter" style="height: 235px">
+                    <div class="whiteHeader fontSr">Srilanka</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Top Destinations Secion end -->
+
+<!-- Top Popular Hotel Secion Start -->
+<div class="padding0 toppopular container marginSection" fxLayout="column">
+    <div class="secondHeader" fxLayout="column" fxFlex="100">
+        <div fxLayout="row" fxFlex="100" fxLayoutAlign="space-between center">
+            <h3>Top Popular Hotel</h3>
+            <div>
+                <button class="btnArrow btn-prev" (click)="prev()">
+                    <mat-icon>chevron_left</mat-icon>
+                </button>
+                <button class="btnArrow btn-next" (click)="next()">
+                    <mat-icon>chevron_right</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div fxLayout="row" class="tabPopularHot" fxFlex="100" fxLayoutGap="20px">
+            <mat-tab-group fitInkBarToContent>
+                <mat-tab label="Bangkok"></mat-tab>
+                <mat-tab label="Tokyo"></mat-tab>
+                <mat-tab label="Hong Kong"></mat-tab>
+                <mat-tab label="Los Angeles"></mat-tab>
+                <mat-tab label="Manila"></mat-tab>
+                <mat-tab label="New York"></mat-tab>
+              </mat-tab-group>
+        </div>
+    </div>
+    <div class="imgRow height400" fxLayout="column" fxFlex="100" fxLayoutAlign="space-between">
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+            <div ngxSlickItem *ngFor="let slide of slides; let i = index; let last = last; let first = first;" class="slide">
+                <div class="sliderDestini" *ngIf="slide.radingInfo" [ngClass]="first == true ? 'margin0': 'marginlf10'">
+                    <div class="topImg">
+                        <img class="img-res" [src]="slide.img" alt="hotels">
+                    </div>
+                    <div class="mar20pad20 boxSlideCon">
+                        <div class="primary font16">{{slide?.hotelName}}</div>
+                        <div class="address black">{{slide?.addr}}</div>
+                        <div class="address1 font11">{{slide?.landMark}}</div>
+                        <div fxLayout="row" class="margin15" fxFlex="100" fxLayoutGap="10px">
+                            <div class="rading">
+                                <span class="whiteHeader greenBg radingBg">{{slide?.rading}}/5</span>
+                                <div class="greenFon font11">({{slide?.reviewsCount}} reviews)</div>
+                            </div>
+                            <div class="rade">
+                                <div class="address1 font11">{{slide?.priceInfo}}</div>
+                                <div class="black radeSize font16 fontWe600">{{slide?.price}}</div>
+                            </div>
+                        </div>
+                        <div class="boxBtn margin10" fxLayout="row" fxLayoutAlign="center center" fxFlex="100">
+                            <button mat-raised-button class="btn-primary font18">View Offers</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sliderExplore" *ngIf="slide.explore">
+                    <div class="exploreBox">
+                        <div class="whiteHeader font30 fontWe600">
+                            {{slide?.exInfo}}
+                        </div>
+                        <div class="btnControl">
+                            <button mat-raised-button class="btn-primary font18">Go Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ngx-slick-carousel>
+        <br /> <br />
+    </div>
+</div>
+<!-- Top Popular Hotel Secion end -->
+
+<!-- Our Experience Start -->
+<div class="bestService container2 marginSection">
+    <div fxLayout="row" fxLayoutAlign="space-evenly" fxFex="100">
+        <div class="right-content width50">
+            <div class="bestThumb1">
+                <div class="round-pg bgLight">
+                    <img class="img-res" src="assets/thumb-up.png" alt="Best Travel Img">
+                </div>
+            </div>
+        </div>
+        <div class="left-content width50" fxLayout="column" fxLayoutGap="30px">
+            <div class="header-info primary">Our Experience</div>
+            <h1>With Our Experience We Will Serve You</h1>
+            <div class="info">
+                Trumba Travel Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                ut labore et dolore magna aliqua.
+            </div>
+            <div fxLayout="row" fxFlex="100" fxLayoutGap="30px">
+                <div class="exInfo">
+                    <div class="primary bold"> 10+</div>
+                    <div>Years of Experience</div>
+                </div>
+                <div class="exInfo">
+                    <div class="primary bold"> 500+</div>
+                    <div>Destination Collaboration</div>
+                </div>
+                <div class="exInfo">
+                    <div class="primary bold">10K+</div>
+                    <div>Happy Customers</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Our Experience Secion end -->
+
+<!-- What They Say Start -->
+<div class="bestService container3 marginSection">
+    <br /> <br />
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxFex="100">
+        <div class="left-content width50" fxLayout="column" fxLayoutGap="30px">
+            <div>
+                <div class="header-info primary">What They Say</div>
+                <h1>What Our Customers Say About Us</h1>
+            </div>
+            <div class="info">
+                “ I can't speak highly enough about our 3-week trip to this place and the service provided by Trumba
+                Travel. Trumba Travel offers great value for money. “
+            </div>
+            <div fxLayout="row" fxFlex="100" fxLayoutGap="30px">
+                <div class="radinginfo">
+                    <div class="primary bold font30"> Jennifa Lopez</div>
+                    <div class="font30">
+                        <mat-icon>star</mat-icon>
+                        <mat-icon>star</mat-icon>
+                        <mat-icon>star</mat-icon>
+                        <mat-icon>star</mat-icon>
+                        <mat-icon>star</mat-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-content width50" fxLayoutAlign="center">
+            <div class="bestThumb1">
+                <div class="location">
+                    <img class="img-res" src="assets/map.png" alt="location">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Our Experience Secion end -->
+
+<!-- News Letter Section Start -->
+<div class="bestService container3 marginSection">
+    <br /> <br />
+    <div fxLayout="row" fxLayoutAlign="space-between center width100">
+        <div class="bgNewLetterParen width100" fxLayout="column">
+            <div fxLayout="row" class="bgNewLetter width100" fxFex="100">
+                <div FxFex="100">
+                    <div class="whiteHeader font25 fontWe600 margin10">Subscribe to get the best deal.</div>
+                    <p class="whiteHeader font18 fontWe300">Receive email updates on our most recent trip packages.</p>
+                    <br />
+                    <form action="" class="newsForm">
+                        <mat-form-field class="newLetterForm">
+                            <mat-label>Enter your email</mat-label>
+                            <input matInput placeholder="pat@example.com" [formControl]="email" required>
+                            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                        </mat-form-field>
+                        <button mat-raised-button class="btn-primary subscribeBtn ">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="newLetterImg">
+                <img class="img-res" src="assets/newletter.png" alt="newletter">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- News Letter Section end -->
