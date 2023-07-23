@@ -84,6 +84,7 @@ a {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    text-wrap: wrap;
 }
 
 input,
@@ -208,27 +209,24 @@ body {
 .container {
     padding-right: 15px !important;
     padding-left: 15px !important;
-    margin-right: auto !important;
     margin-left: auto !important;
-    width: 100% !important;
+    margin-right: auto !important;
     white-space: initial !important;
 }
 
 .container2 {
     padding-right: 15px !important;
     padding-left: 15px !important;
-    margin-right: auto !important;
     margin-left: auto !important;
-    width: 100% !important;
+    margin-right: auto !important;
     white-space: initial !important;
 }
 
 .container3 {
     padding-right: 15px !important;
     padding-left: 15px !important;
-    margin-right: auto !important;
     margin-left: auto !important;
-    width: 100% !important;
+    margin-right: auto !important;
     white-space: initial !important;
 }
 
@@ -330,6 +328,15 @@ app-filter-form {
     display: flex;
     align-content: flex-end;
     align-items: flex-end;
+}
+
+.topOfferMobRes {
+    width: 135px;
+    height: 165px;
+    flex-shrink: 0;
+    display: flex;
+    align-content: flex-end;
+    margin-bottom: 20px;
 }
 
 .offer1 {
@@ -544,8 +551,13 @@ app-filter-form {
     font-weight: 600;
 }
 
+
 .item .whiteHeader {
     font-size: 30px;
+}
+
+.fontMobRes .whiteHeader {
+    font-size: 20px;
 }
 
 .bgLight {
@@ -592,6 +604,12 @@ app-filter-form {
         left: 30px;
         max-width: 500px;
         bottom: 0px;
+    }
+}
+
+.mobileNewLetter {
+    .bgNewLetter {
+        padding: 30px 10px;
     }
 }
 
@@ -688,4 +706,8 @@ button.btnArrow {
 
 .textRight {
     text-align: right;
+}
+
+.mobileWrap {
+    flex-wrap: wrap;
 }

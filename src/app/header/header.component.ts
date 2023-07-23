@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../shared/common.service';
 
 @Component({
   selector: 'app-header',
@@ -7,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _commonSer: CommonService) { }
 
   ngOnInit(): void {
   }
 
   toggleSidenav() {
-
+    this._commonSer.setheaderOpen(true);
   }
 
 }
