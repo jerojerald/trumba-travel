@@ -2,18 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatLegacyAutocompleteModule as MatAutocompleteModule} from '@angular/material/legacy-autocomplete';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
-import {MatButtonModule} from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
+import {MatLegacyListModule as MatListModule} from '@angular/material/legacy-list';
+import {MatLegacyButtonModule as MatButtonModule} from '@angular/material/legacy-button';
+import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
+import {MatLegacySelectModule as MatSelectModule} from '@angular/material/legacy-select';
 import {NgFor, AsyncPipe} from '@angular/common';
-import {MatInputModule} from '@angular/material/input';
+import {MatLegacyInputModule as MatInputModule} from '@angular/material/legacy-input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import {MatTabsModule} from '@angular/material/tabs';
+import {MatLegacyTabsModule as MatTabsModule} from '@angular/material/legacy-tabs';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 

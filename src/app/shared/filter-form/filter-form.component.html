@@ -1,21 +1,21 @@
 <div class="container">
   <div class="filterForm">
     <form fxLayout="column" [formGroup]="filterForm" fxFlex="100">
-      <div fxLayout="row" fxLayoutGap="10px">
-        <mat-form-field fxFlex="15" appearance="outline">
+      <div fxLayout="row" fxLayoutGap="10px" fxFlex="100">
+        <mat-form-field fxFlex="15" fxFlex.lt-md="45" appearance="outline">
           <mat-select formControlName="roundTrip">
             <mat-option *ngFor="let list of filterFormArr?.trip" [value]="list">{{list}}</mat-option>
           </mat-select>
         </mat-form-field>
 
-        <mat-form-field fxFlex="15" appearance="outline">
+        <mat-form-field fxFlex="15" fxFlex.lt-md="45" appearance="outline">
           <mat-select formControlName="permiumTrip">
             <mat-option *ngFor="let list of filterFormArr?.class" [value]="list">{{list}}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
-      <div fxLayout="row" fxLayoutGap="10px" class="posRelative" fxLayoutAlign="center center">
-        <mat-form-field fxFlex="20" appearance="outline">
+      <div fxLayout="row" fxLayoutGap="10px" ngClass.lt-md="mobileWrap" fxFlex="100" class="posRelative width100" fxLayoutAlign.gt-md="center center">
+        <mat-form-field fxFlex="20" fxFlex.lt-md="45"  appearance="outline">
           <span fxLayout="flex" flexLayoutGap="10px" fxLayoutAlign="center center">
             <mat-icon>flight_takeoff</mat-icon>
             <span class="formLabel rightalign">flying from</span>
@@ -27,7 +27,7 @@
             </mat-option>
           </mat-autocomplete>
         </mat-form-field>
-        <mat-form-field fxFlex="20" appearance="outline">
+        <mat-form-field fxFlex="20" fxFlex.lt-md="45" appearance="outline">
           <span fxLayout="flex" flexLayoutGap="10px" fxLayoutAlign="center center">
             <mat-icon>location_on</mat-icon>
             <span class="formLabel rightalign">Flying to</span>
@@ -39,7 +39,7 @@
             </mat-option>
           </mat-autocomplete>
         </mat-form-field>
-        <mat-form-field fxFlex="15" appearance="outline">
+        <mat-form-field fxFlex="15" fxFlex.lt-md="45" appearance="outline">
           <div fxLayout="row" flexLayoutGap="10px" fxLayoutAlign="center center">
             <span>
               <mat-icon>date_range</mat-icon>
@@ -62,7 +62,7 @@
           </div>
         </mat-form-field>
 
-        <mat-form-field fxFlex="13" appearance="outline">
+        <mat-form-field fxFlex="13" fxFlex.lt-md="45" appearance="outline">
           <span fxLayout="flex" flexLayoutGap="10px" fxLayoutAlign="center center">
             <mat-icon>nights_stay</mat-icon>
             <span class="formLabel rightalign">How long</span>
@@ -72,7 +72,7 @@
           </span>
         </mat-form-field>
 
-        <div fxFlex="13" appearance="outline">
+        <div fxFlex="13" fxFlex.lt-md="45" appearance="outline">
           <span fxLayout="flex" fxFlex="100" (click)="openRooms()" class="posRelative customIn"
             fxLayoutAlign="space-between center" flexLayoutGap="15px">
             <div fxFlex="25">
@@ -90,7 +90,7 @@
             </div>
           </span>
         </div>
-        <div fxFlex="13" class="margin0Right" fxLayoutAlign="end">
+        <div fxFlex="13" fxFlex.lt-md="45" class="margin0Right" fxLayoutAlign="end">
           <button mat-raised-button class="btnSearch btn-primary">Search</button>
         </div>
         <!-- Room dev start -->
