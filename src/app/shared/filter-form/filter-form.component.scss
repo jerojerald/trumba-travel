@@ -2,6 +2,7 @@
     border-radius: 8px;
     background: rgb(255, 255, 255, 0.9);
     padding: 5px 10px !important;
+    padding-bottom: 30px !important;
 } 
 
 ::ng-deep .filterForm .mat-form-field-wrapper {
@@ -122,3 +123,9 @@ span.formLabel.rightalign {
     flex-wrap: wrap;
 }
 
+
+.AdvanceSearch {
+    position: absolute;
+    bottom: -45px;
+    left: -9px;
+}

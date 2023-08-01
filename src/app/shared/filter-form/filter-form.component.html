@@ -1,25 +1,28 @@
 <div class="container">
   <div class="filterForm">
     <form fxLayout="column" [formGroup]="filterForm" fxFlex="100">
-      <div fxLayout="row" fxLayoutGap="10px" fxFlex="100">
-        <mat-form-field fxFlex="15" fxFlex.lt-md="45" appearance="outline">
+      <!-- <div fxLayout="row" fxLayoutGap="10px" fxFlex="100">
+        <mat-form-field fxFlex="15" fxFlex.lt-md="46" appearance="outline">
           <mat-select formControlName="roundTrip">
             <mat-option *ngFor="let list of filterFormArr?.trip" [value]="list">{{list}}</mat-option>
           </mat-select>
         </mat-form-field>
 
-        <mat-form-field fxFlex="15" fxFlex.lt-md="45" appearance="outline">
+        <mat-form-field fxFlex="15" fxFlex.lt-md="46" appearance="outline">
           <mat-select formControlName="permiumTrip">
             <mat-option *ngFor="let list of filterFormArr?.class" [value]="list">{{list}}</mat-option>
           </mat-select>
         </mat-form-field>
-      </div>
+      </div> -->
       <div fxLayout="row" fxLayoutGap="10px" ngClass.lt-md="mobileWrap" fxFlex="100" class="posRelative width100" fxLayoutAlign.gt-md="center center">
-        <mat-form-field fxFlex="20" fxFlex.lt-md="45"  appearance="outline">
+        <mat-form-field fxFlex="20" fxFlex.lt-md="46"  appearance="outline">
           <span fxLayout="flex" flexLayoutGap="10px" fxLayoutAlign="center center">
             <mat-icon>flight_takeoff</mat-icon>
             <span class="formLabel rightalign">flying from</span>
             <input matInput [matAutocomplete]="auto" placeholder="flying from" formControlName="flyingFrom">
+            <span class="clearFrom pointer" fxLayoutAlign="end" (click)="clearFormField('flyingTo')"> 
+              <mat-icon class="font16">close</mat-icon>
+          </span>
           </span>
           <mat-autocomplete #auto="matAutocomplete">
             <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
@@ -27,11 +30,14 @@
             </mat-option>
           </mat-autocomplete>
         </mat-form-field>
-        <mat-form-field fxFlex="20" fxFlex.lt-md="45" appearance="outline">
+        <mat-form-field fxFlex="20" fxFlex.lt-md="46" appearance="outline">
           <span fxLayout="flex" flexLayoutGap="10px" fxLayoutAlign="center center">
-            <mat-icon>location_on</mat-icon>
+            <mat-icon>flight_land</mat-icon>
             <span class="formLabel rightalign">Flying to</span>
             <input matInput [matAutocomplete]="auto2" placeholder="Flying to" formControlName="flyingTo">
+            <span class="clearFrom pointer"fxLayoutAlign="end" (click)="clearFormField('flyingTo')"> 
+                <mat-icon class="font16">close</mat-icon>
+            </span>
           </span>
           <mat-autocomplete #auto2="matAutocomplete">
             <mat-option *ngFor="let state of filteredToStates | async" [value]="state.name">
@@ -39,7 +45,7 @@
             </mat-option>
           </mat-autocomplete>
         </mat-form-field>
-        <mat-form-field fxFlex="15" fxFlex.lt-md="45" appearance="outline">
+        <mat-form-field fxFlex="15" fxFlex.lt-md="46" appearance="outline">
           <div fxLayout="row" flexLayoutGap="10px" fxLayoutAlign="center center">
             <span>
               <mat-icon>date_range</mat-icon>
@@ -62,7 +68,21 @@
           </div>
         </mat-form-field>
 
-        <mat-form-field fxFlex="13" fxFlex.lt-md="45" appearance="outline">
+        <mat-form-field fxFlex="15" fxFlex.lt-md="46" appearance="outline">
+          <div fxLayout="row" flexLayoutGap="10px" fxLayoutAlign="center center">
+            <span>
+              <mat-icon>date_range</mat-icon>
+            </span>
+            <span>
+              <span class="formLabel">Arriving</span>
+              <input matInput (click)="startPicker1.open()" (keyup.enter)="startPicker1.open()" [min]="arrstartMinDate"
+                [max]="arrstartMaxDate" (dateChange)="arrchangeStartDate('change', $event)" [matDatepicker]="startPicker1"
+                formControlName="arriving" readonly>
+              <mat-datepicker #startPicker1></mat-datepicker>
+            </span>
+          </div>
+        </mat-form-field>
+        <!-- <mat-form-field fxFlex="13" fxFlex.lt-md="46" appearance="outline">
           <span fxLayout="flex" flexLayoutGap="10px" fxLayoutAlign="center center">
             <mat-icon>nights_stay</mat-icon>
             <span class="formLabel rightalign">How long</span>
@@ -70,9 +90,9 @@
               <mat-option [value]="list" *ngFor="let list of filterFormArr?.howlong">{{list}} Night</mat-option>
             </mat-select>
           </span>
-        </mat-form-field>
+        </mat-form-field> -->
 
-        <div fxFlex="13" fxFlex.lt-md="45" appearance="outline">
+        <div fxFlex="13" fxFlex.lt-md="46" class="posRelative" appearance="outline">
           <span fxLayout="flex" fxFlex="100" (click)="openRooms()" class="posRelative customIn"
             fxLayoutAlign="space-between center" flexLayoutGap="15px">
             <div fxFlex="25">
@@ -89,8 +109,11 @@
               <div class="controlPosArr mat-select-arrow"></div>
             </div>
           </span>
+          <div class="AdvanceSearch">
+            <mat-checkbox>Flexi</mat-checkbox>
+          </div>
         </div>
-        <div fxFlex="13" fxFlex.lt-md="45" class="margin0Right" fxLayoutAlign="end">
+        <div fxFlex="13" fxFlex.lt-md="46" ngClass.gt-md="margin0Right" fxLayoutAlign="end">
           <button mat-raised-button class="btnSearch btn-primary">Search</button>
         </div>
         <!-- Room dev start -->
@@ -147,6 +170,11 @@
         </div>
         <!-- Room dev start -->
       </div>
+
+      <!-- Advanced Search Section -->
+      <!-- <div fxLayout="row" fxLayoutGap="10px" ngClass.lt-md="mobileWrap" fxFlex="100" class="posRelative width100" fxLayoutAlign.gt-md="center center">
+      
+      </div> -->
     </form>
   </div>
 </div>

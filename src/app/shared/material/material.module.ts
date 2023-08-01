@@ -15,6 +15,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatLegacyTabsModule as MatTabsModule} from '@angular/material/legacy-tabs';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     MatNativeDateModule,
     MatTabsModule,
     SlickCarouselModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatRadioModule,
+    MatCheckboxModule
   ],
   exports: [
     MatToolbarModule,
@@ -55,7 +59,9 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     MatNativeDateModule,
     MatTabsModule,
     SlickCarouselModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatRadioModule,
+    MatCheckboxModule
   ]
 })
 export class MaterialModule { }

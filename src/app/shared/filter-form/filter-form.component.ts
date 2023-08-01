@@ -37,6 +37,10 @@ export class FilterFormComponent implements OnInit {
   startMaxDate:any;
   startMinDate = moment.utc().format();
   endMinDate = moment.utc().format();
+  arrendMaxDate:any;
+  arrstartMaxDate:any;
+  arrstartMinDate = moment.utc().format();
+  arrendMinDate = moment.utc().format();
   toggleRooms: boolean = false;
   count = 0;
   ingreementArr:{ id: number, count: number, ageArr: { id: number }[] }[] = [];
@@ -49,6 +53,7 @@ export class FilterFormComponent implements OnInit {
       flyingTo: ['Arkansas', Validators.required],
       howlong: [5, Validators.required],
       fromDate: [new Date()],
+      arriving: [new Date()],
       passengers: ['1', Validators.required],
       rooms: ['1']
     })
@@ -80,13 +85,13 @@ export class FilterFormComponent implements OnInit {
   }
 
   changeStartDate(action:any, date:any) {
-    console.log(action, date)
     this.startMinDate = date.value;
     this.endMinDate = date.value;
   }
 
-  changeEndDate(action:any, date:any) {
-
+  arrchangeStartDate(action:any, date:any) {
+    this.arrstartMinDate = date.value;
+    this.arrendMinDate = date.value;
   }
 
 
@@ -124,6 +129,10 @@ export class FilterFormComponent implements OnInit {
       element.count--;
       element.ageArr.pop();
     } 
+  }
+
+  clearFormField(data: string) {
+    this.filterForm.get(data)?.setValue('');
   }
 
 }

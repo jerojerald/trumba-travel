@@ -711,3 +711,28 @@ button.btnArrow {
 .mobileWrap {
     flex-wrap: wrap;
 }
+
+
+@media only screen and (max-width: 992px) {
+    .slick-list.draggable {
+        height: auto !important;
+        padding-bottom: 5px; 
+    }
+    .leftMob50 {
+        height: 45vh !important;
+    }
+
+    .marginSection {
+        margin: 20px 0px;
+    }
+
+    .toppopular {
+        padding: 0px 10px !important;
+    }
+
+    .topOfferMobRes {
+        width: 47%;
+        height: 26vh;
+        background-size: 100% 100% !important;
+    }
+}

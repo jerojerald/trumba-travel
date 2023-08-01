@@ -155,3 +155,7 @@
 ::ng-deep .newLetterForm div.mat-form-field-flex {
     padding: 4px !important;
 }
+
+::ng-deep button.slick-arrow {
+    display: none !important;
+}
